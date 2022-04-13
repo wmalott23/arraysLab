@@ -106,12 +106,8 @@ let dishes = [
 //Example function
 function findMexicanFood(){
     let results = dishes.filter(function(el){
-        if(el.cuisine === "Mexican"){
-            return true;
-        }
-        else{
-            return false;
-        }})
+        if(el.cuisine === "Mexican") return true;    
+        })
 
     //Debug tip: Place a Breakpoint on the return AFTER the filter, then hover over "results" to see results of filter without having to step through the whole thing!
 
@@ -129,14 +125,8 @@ console.log('Mexican Foods: ', mexicanFood)
 function problemOne(){
 
     let results = dishes.filter(function(el){
-        if(el.cuisine === "Vegetarian"){
-            return true;
-        }
-        else{
-            return false;
-        }})
-
-
+        if(el.cuisine === "Vegetarian") return true;
+        })        
     return results;
 }
 
@@ -149,14 +139,8 @@ console.log('Vegetarian Foods: ', problemUno)
 function problemTwo(){
 
     let results = dishes.filter(function(el){
-        if(el.cuisine === "Italian" && el.servings > 5){
-            return true;
-        }
-        else{
-            return false;
-        }})
-
-
+        if(el.cuisine === "Italian" && el.servings > 5) return true;
+        })
     return results;
 }
 
@@ -169,13 +153,8 @@ console.log('Italian Big Boi Meals: ', problemDos)
 function problemThree(){
 
     let results = dishes.filter(function(el){
-        if(el.id === el.servings){
-            return true;
-        }
-        else{
-            return false;
-        }})
-
+        if(el.id === el.servings) return true;
+        })
 
     return results;
 }
@@ -189,13 +168,8 @@ console.log('Matching ID and Servings Meals: ', problemTres)
 function problemFour(){
 
     let results = dishes.filter(function(el){
-        if(el.servings%2 == 0){
-            return true;
-        }
-        else{
-            return false;
-        }})
-
+        if(el.servings%2 == 0) return true;
+        })
 
     return results;
 }
@@ -209,13 +183,8 @@ console.log('Even Numbered Servings Meals: ', problemCuatro)
 function problemFive(){
 
     let results = dishes.filter(function(el){
-        if(el.ingredients.includes("tomato") && el.ingredients.includes("cheese")){
-            return true;
-        }
-        else{
-            return false;
-        }})
-
+        if(el.ingredients.includes("tomato") && el.ingredients.includes("cheese")) return true;
+        })
 
     return results;
 }
@@ -235,14 +204,10 @@ function problemSix(){
 })
     let resultArray = [];
     let newResults = results.filter(function(el){
-        if(resultArray.includes(el)){
-            return false;
-        }
-        else{
+        if(!resultArray.includes(el)){
             resultArray.push(el)
             return true;
-        }
-        })
+        }})
     return newResults;
 }
 
@@ -257,7 +222,7 @@ console.log('Cuisine Types: ', problemSeis)
 function problemSeven(){
 
     let results = dishes.map(function(el){
-        return el.cuisine + " " + el.name;
+        return `${el.cuisine} ${el.name}`;
 })
     return results;
 }
@@ -271,15 +236,10 @@ console.log('Cuisine Types and Names: ', problemSeite)
 function problemEight(){
     
         let results = dishes.filter(function(el){
-            if(el.cuisine == "Vegetarian"){
-                return true;
-            }
-            else{
-                return false;
-            }
+            if(el.cuisine == "Vegetarian") return true;
             })
             let newResults = results.map(function(el){
-                return el.cuisine + " " + el.name;
+                return `${el.cuisine} ${el.name}`;
             })
                 
     return newResults;
@@ -296,13 +256,8 @@ console.log('Vegetarian and Names: ', problemOcho)
 function problemNine(){
 
     let results = dishes.filter(function(el){
-        if(el.ingredients.includes("chickpea")){
-            return true;
-        }
-        else{
-            return false;
-        }})
-
+        if(el.ingredients.includes("chickpea")) return true;
+        })
 
     return results;
 }
@@ -337,12 +292,7 @@ function problemEleven(){
             if(el.cuisine == dishes[i].cuisine) {
                 counter++;
             }
-        if(counter === 1){
-            return true;
-        }
-        else{
-            return false;
-        }
+        if(counter === 1) return true;
     })
     return results;
 }
